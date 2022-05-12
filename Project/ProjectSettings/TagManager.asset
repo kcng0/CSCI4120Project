@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+<<<<<<< HEAD
   - Door
+=======
+>>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
   layers:
   - Default
   - TransparentFX
