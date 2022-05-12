@@ -41,7 +41,7 @@ public class enemyBomb : MonoBehaviour
             if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.0 && lifePoint > 0)
             {
                 lifePoint = 0;
-                Debug.Log("Hit!");
+                Debug.Log("Explosion Hit!");
             }
         }
 
@@ -110,7 +110,7 @@ public class enemyBomb : MonoBehaviour
         
     }
 
-        //check see the player or not
+    //check see the player or not
     private void seePlayerCheck()
     {
         GameObject enemy;
@@ -203,4 +203,5 @@ public class enemyBomb : MonoBehaviour
             }
         }
     }
+
 }
