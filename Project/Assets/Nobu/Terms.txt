@@ -1,0 +1,33 @@
+This data is 『Fate/Grand Order』 fan art.
+Not for redistribution.
+Do not share with any third party.
+Commercial use prohibited.
+
+--------------------------
+Terms
+--------------------------
+Terms are subject to change.
+If there are any changes to the terms, we will notify you on Twitter.
+The terms and conditions described in Privatter are up to date. (Https://privatter.net/p/7401070)
+By using this model, you agree to the Terms of Use.
+
+■Prohibited matter
+・ Combined with other model data
+・ Nico Nico Doga, Nico Nico seiga, posting of works other than Twitter
+・ Commercial use (3D data created by tracing, illustrations are also not possible)
+・ Use for works with age restrictions (sexual, grotesque, etc.Contents equivalent to R15 and R18)
+・ Use in works that include political, discriminatory, slanderous, or overly violent expressions
+・ Use other than MMD (including derivative software) (VRChat is useless, modeling software for remodeling is OK)
+・ Distribution of data (both modified and unmodified)
+・ Registration to Nico Nico 3D
+・ Self-made remarks
+・ Three-dimensional output with 3D printers, etc.
+・ Use for user icons (Twitter headers are acceptable in principle)
+・ Use with ripping model (*)
+
+* The ripping model is a model that has been modified so that it can be operated with MMD by extracting data from game software.
+
+
+■Permits
+・ Change color and size
+・ Changes and additions to bones, morphs, textures, and spheres
