@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637879367130000000
+      ticks: 637879664160000000
     m_Hash: 1062170491
   m_LockFileStatus:
     m_FilePath: K:/Unity/GameProject/Project/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637879367130000000
+      ticks: 637879664160000000
     m_Hash: 1106842001
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
