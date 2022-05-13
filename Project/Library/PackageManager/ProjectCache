@@ -5,26 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-      ticks: 637879664160000000
-    m_Hash: 1062170491
-=======
-      ticks: 637879538494994851
+      ticks: 637880022136611549
     m_Hash: 3944693573
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
   m_LockFileStatus:
     m_FilePath: C:/Users/LokWong/Documents/GitHub/CSCI4120Project/Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-      ticks: 637879664160000000
-    m_Hash: 1106842001
-=======
-      ticks: 637879538494994851
+      ticks: 637880022136616647
     m_Hash: 2738422747
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

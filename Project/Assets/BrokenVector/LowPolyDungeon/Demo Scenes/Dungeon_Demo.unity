@@ -1764,13 +1764,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 6322556187633357650, guid: f5e4cf5af47ee60418f92554c028a4ce, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
-=======
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
     - target: {fileID: 6322556187635551634, guid: f5e4cf5af47ee60418f92554c028a4ce, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
@@ -7301,6 +7298,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773433552}
     m_Modifications:
+    - target: {fileID: 8702035252237058681, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8702035252241429017, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
@@ -8554,13 +8555,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7750370834963051906, guid: b7ed1f58ec447ad4fb0c93a62eb4c4b6, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
-=======
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
     - target: {fileID: 7750370834965310274, guid: b7ed1f58ec447ad4fb0c93a62eb4c4b6, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
@@ -8748,6 +8746,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773433552}
     m_Modifications:
+    - target: {fileID: 6404306957142477276, guid: 1e5e6584f4b365c49a0edc23ccafc87b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6404306957146585532, guid: 1e5e6584f4b365c49a0edc23ccafc87b, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
@@ -20836,6 +20838,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773433552}
     m_Modifications:
+    - target: {fileID: 8702035252237058681, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8702035252241429017, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
@@ -40290,6 +40296,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773433552}
     m_Modifications:
+    - target: {fileID: 6404306957142477276, guid: 1e5e6584f4b365c49a0edc23ccafc87b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6404306957146585532, guid: 1e5e6584f4b365c49a0edc23ccafc87b, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
@@ -58112,6 +58122,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773433552}
     m_Modifications:
+    - target: {fileID: 3645152611690968, guid: bca29393fb49e1e4d862950ab1749426, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6681773453131413247, guid: bca29393fb49e1e4d862950ab1749426, type: 3}
       propertyPath: m_RootOrder
       value: 308
@@ -76583,13 +76597,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 8213633446959476701, guid: d8442ff07dd71bb48be63de4bffeeb34, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
-=======
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
     - target: {fileID: 8842642731050808679, guid: d8442ff07dd71bb48be63de4bffeeb34, type: 3}
       propertyPath: m_RootOrder
       value: 525
@@ -87185,7 +87196,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 6322556187633357650, guid: f5e4cf5af47ee60418f92554c028a4ce, type: 3}
       propertyPath: m_TagString
       value: Door
@@ -87194,8 +87204,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
-=======
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
     - target: {fileID: 6322556187635551634, guid: f5e4cf5af47ee60418f92554c028a4ce, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
@@ -87405,7 +87413,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7750370834963051906, guid: b7ed1f58ec447ad4fb0c93a62eb4c4b6, type: 3}
       propertyPath: m_TagString
       value: Door
@@ -87414,8 +87421,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
     - target: {fileID: 7750370834965310274, guid: b7ed1f58ec447ad4fb0c93a62eb4c4b6, type: 3}
       propertyPath: m_LightProbeUsage
       value: 0

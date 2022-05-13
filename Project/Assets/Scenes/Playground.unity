@@ -122,11 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-<<<<<<< HEAD
   m_NavMeshData: {fileID: 23800000, guid: fe77493862685e44484437f151e528c9, type: 2}
-=======
-  m_NavMeshData: {fileID: 23800000, guid: 7e952e63fa4ba5341a6203fcda31a8b7, type: 2}
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
 --- !u!1 &370483492
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e85797c6677a875499fb02a787842455, type: 3}
       propertyPath: m_Name
-      value: Nobu_a
+      value: Statue
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e85797c6677a875499fb02a787842455, type: 3}
       propertyPath: m_Controller
@@ -528,7 +524,7 @@ MonoBehaviour:
   viewAngle: 120
   obstruct:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1
   Waypoint1: {fileID: 1240623543}
   Waypoint2: {fileID: 370483496}
 --- !u!1 &542508511
@@ -1185,7 +1181,7 @@ MonoBehaviour:
   viewAngle: 120
   obstruct:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   Waypoint1: {fileID: 2007020491}
   Waypoint2: {fileID: 592244125}
 --- !u!195 &965854726
@@ -1223,24 +1219,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 1.9999999, z: 0}
---- !u!1 &994116114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-  m_PrefabInstance: {fileID: 5393215579111688471}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &994116119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994116114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87dfba32f2f90bd41a3ac290adec805c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactDistance: 5
 --- !u!1 &1019472930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1818861082154570, guid: 5e45c8f884f6d124ea0499aae7fdbec8, type: 3}
@@ -1267,7 +1245,7 @@ MonoBehaviour:
   viewAngle: 130
   obstruct:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   Waypoint1: {fileID: 1405255332}
   Waypoint2: {fileID: 748370891}
 --- !u!195 &1019472932
@@ -1768,7 +1746,7 @@ MonoBehaviour:
   viewAngle: 90
   obstruct:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   Waypoint1: {fileID: 498979151}
   Waypoint2: {fileID: 1446273913}
 --- !u!4 &1527141132 stripped
@@ -2313,11 +2291,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8616685848737228376, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 5393215579111688471}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 994116114}
-=======
   m_GameObject: {fileID: 640209758}
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -2696,11 +2670,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 5393215579111688471}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 994116114}
-=======
   m_GameObject: {fileID: 640209758}
->>>>>>> ca5d475d52072cd91c3274f4bd0d14cbb3d9f6e9
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e087ecce43ebbff45a1b360637807d93, type: 3}
