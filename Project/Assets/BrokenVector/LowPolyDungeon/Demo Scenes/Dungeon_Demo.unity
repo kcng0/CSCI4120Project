@@ -58168,6 +58168,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3645152611690968, guid: bca29393fb49e1e4d862950ab1749426, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6681773453131413247, guid: bca29393fb49e1e4d862950ab1749426, type: 3}
       propertyPath: m_RootOrder
       value: 308
@@ -58190,7 +58194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6681773453131413247, guid: bca29393fb49e1e4d862950ab1749426, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.001436824
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 6681773453131413247, guid: bca29393fb49e1e4d862950ab1749426, type: 3}
       propertyPath: m_LocalPosition.z

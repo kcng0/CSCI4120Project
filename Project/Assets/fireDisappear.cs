@@ -20,6 +20,7 @@ public class fireDisappear : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
+        if (other.gameObject.tag != "StoneMonster")
         Destroy(gameObject, 0.05f);
     }
 
