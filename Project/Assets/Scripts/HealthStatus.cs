@@ -12,12 +12,17 @@ public class HealthStatus : MonoBehaviour
 	public HealthBar healthBar;
     public GameObject gotHitScreen;
 
+	private GameManager gameManager;
+	private CharacterController characterController;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+
+		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		characterController = GetComponent<CharacterController>();
 	}
 
 	// Update is called once per frame
@@ -34,7 +39,7 @@ public class HealthStatus : MonoBehaviour
 			}
 
 		}
-		
+
 	}
 
 	public void TakeDamage(int damage)
@@ -42,6 +47,12 @@ public class HealthStatus : MonoBehaviour
 		gotHit();
 		GetComponent<AudioSource>().Play();
 		currentHealth -= damage;
+
+		if (currentHealth <= 0)
+        {
+			characterController.enabled = false;
+			gameManager.GameOver();
+        }
 		healthBar.SetHealth(currentHealth);
 	}
 
