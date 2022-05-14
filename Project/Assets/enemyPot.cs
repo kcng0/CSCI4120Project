@@ -18,6 +18,7 @@ public class enemyPot : MonoBehaviour
     public Transform Waypoint2;
     private bool hit1 = false;
     private bool hit2 = false;
+    
     public HealthStatus healthStatus;
     public int damageValue;
 
@@ -193,8 +194,11 @@ public class enemyPot : MonoBehaviour
         if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("nobu_attack") && hit1 == false && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.12f && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.88f)
         {
             //Debug.Log("Small Hit!");
-            healthStatus.TakeDamage(damageValue);
-            hit1 = true;    
+            if(collision.gameObject.tag == "Player")
+            {
+                healthStatus.TakeDamage(damageValue);
+                hit1 = true;    
+            }
         }
         else if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("nobu_big_attack") && hit2 == false)
         {

@@ -132,6 +132,7 @@ public class enemyStone : MonoBehaviour
                 //transform.LookAt(enemy.transform.position);
                 Rigidbody instanceFire = Instantiate(prefabFire, new Vector3(0,1,0) * 0.7f + shootPosition.position + shootPosition.forward * 1.0f,  shootPosition.rotation * Quaternion.Euler (-90f, 0f, 0f));
                 instanceFire.GetComponent<Rigidbody>().AddForce(shootPosition.forward * shootForce);
+                GetComponent<AudioSource>().Play();
                 Destroy(instanceFire.gameObject, 2f);
                 yield return new WaitForSeconds(1.0f);
             }

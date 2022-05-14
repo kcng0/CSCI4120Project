@@ -18,6 +18,17 @@ public class enemyBomb : MonoBehaviour
     public Transform Waypoint1;
     public Transform Waypoint2;
 
+    public AudioSource[] sounds;
+    public AudioSource fuse;
+    public AudioSource explosion;
+
+    public bool fused = false;
+    public bool exploded = false;
+
+    public HealthStatus healthStatus;
+    public int damageValue;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +36,9 @@ public class enemyBomb : MonoBehaviour
         agent.destination = Waypoint2.position;
         tempPositon = Waypoint2.position;
         thisAnim = GetComponent<Animator>();
+        sounds = GetComponents<AudioSource>();
+        explosion = sounds[0];
+        fuse = sounds[1];
         StartCoroutine("MoveOrNot");         
     }
 
@@ -36,12 +50,27 @@ public class enemyBomb : MonoBehaviour
 
         enemy = GameObject.FindGameObjectWithTag("Player");
 
+        if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("attack") && fused == false)
+        {
+            fuse.Play();
+            fused = true;
+        }
+
+        if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.36f && exploded == false)
+        {
+            fuse.Stop();
+            explosion.Play();
+            exploded = true;
+        }
+
         if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.36f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5f)
         {
+            //fuse.Stop();
             if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.0 && lifePoint > 0)
             {
                 lifePoint = 0;
                 Debug.Log("Explosion Hit!");
+                healthStatus.TakeDamage(damageValue);
             }
         }
 

@@ -19,6 +19,9 @@ public class enemyGolem : MonoBehaviour
     public Transform Waypoint2;
     private bool hit = false;
 
+    public HealthStatus healthStatus;
+    public int damageValue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -107,6 +110,7 @@ public class enemyGolem : MonoBehaviour
                 if (Vector3.Distance(newPos, thisColl.transform.position) <= 3.0 && hit == false)
                 {
                     Debug.Log("Punch Hit!");
+                    healthStatus.TakeDamage(damageValue);
                     hit = true;
                 }
             }

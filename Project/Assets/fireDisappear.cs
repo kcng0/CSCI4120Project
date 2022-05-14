@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class fireDisappear : MonoBehaviour
 {
+    public HealthStatus healthStatus;
+    public int damageValue;
+    private bool hit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,15 @@ public class fireDisappear : MonoBehaviour
     private void OnCollisionEnter(Collision other) 
     {
         if (other.gameObject.tag != "StoneMonster")
-        Destroy(gameObject, 0.05f);
+        {
+            Destroy(gameObject, 0.05f);
+        }
+
+        if(other.gameObject.tag == "Player"  && hit == false)
+            {
+                healthStatus.TakeDamage(damageValue);
+                hit = true;
+            }
     }
 
 }
