@@ -18,6 +18,8 @@ public class enemyPot : MonoBehaviour
     public Transform Waypoint2;
     private bool hit1 = false;
     private bool hit2 = false;
+    public HealthStatus healthStatus;
+    public int damageValue;
 
     // Start is called before the first frame update
     void Start()
@@ -188,9 +190,10 @@ public class enemyPot : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) 
     {
-        if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("nobu_attack") && hit1 == false)
+        if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("nobu_attack") && hit1 == false && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.12f && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.88f)
         {
-            Debug.Log("Small Hit!");
+            //Debug.Log("Small Hit!");
+            healthStatus.TakeDamage(damageValue);
             hit1 = true;    
         }
         else if (thisAnim.GetCurrentAnimatorStateInfo(0).IsName("nobu_big_attack") && hit2 == false)
