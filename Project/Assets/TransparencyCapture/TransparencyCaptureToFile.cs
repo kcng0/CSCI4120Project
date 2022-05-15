@@ -1,0 +1,23 @@
+using System.Collections;
+using UnityEngine;
+
+public class TransparencyCaptureToFile:MonoBehaviour
+{
+    public string fileName;
+    public IEnumerator capture()
+    {
+
+        yield return new WaitForEndOfFrame();
+        string path = Application.dataPath;
+        print(path);
+        //After Unity4,you have to do this function after WaitForEndOfFrame in Coroutine
+        //Or you will get the error:"ReadPixels was called to read pixels from system frame buffer, while not inside drawing frame"
+        zzTransparencyCapture.captureScreenshot(path + "/" + fileName + ".png");
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+            StartCoroutine(capture());
+    }
+}
