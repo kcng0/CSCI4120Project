@@ -61,7 +61,7 @@ public class enemyBoss : MonoBehaviour
 
         if (hit3 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Basic Attack"))
         {
-            if (Vector3.Distance(enemy.transform.position,transform.position) <= 4.0)
+            if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
             {
                 healthStatus.TakeDamage(damageValue3);
                 hit3 = false;
@@ -70,7 +70,7 @@ public class enemyBoss : MonoBehaviour
         }
         if (hit4 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Claw Attack"))
         {
-            if (Vector3.Distance(enemy.transform.position,transform.position) <= 3.0)
+            if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
             {
                 healthStatus.TakeDamage(damageValue4);
                 hit4 = false;
@@ -79,7 +79,7 @@ public class enemyBoss : MonoBehaviour
         }
         if (hit5 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Horn Attack"))
         {
-            if (Vector3.Distance(enemy.transform.position,transform.position) <= 3.0)
+            if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
             {
                 healthStatus.TakeDamage(damageValue5);
                 hit5 = false;
