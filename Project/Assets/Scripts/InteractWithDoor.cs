@@ -14,12 +14,12 @@ public class InteractWithDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Item item = GameObject.Find("PlayerCapsule").GetComponent<InteractItem>().EquipedItem;
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
-            if (hit.collider.CompareTag("Door") && Input.GetKeyDown(KeyCode.E))
+            if (hit.collider.CompareTag("Door") && Input.GetKeyDown(KeyCode.E) && item != null && item.itemType == Item.ItemType.key_1)
             {
                 hit.collider.GetComponent<Door>().ChangeDoorState();
             }

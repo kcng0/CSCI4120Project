@@ -7,6 +7,7 @@ TagManager:
   - Door
   - CinemachineTarget
   - StoneMonster
+  - item
   layers:
   - Default
   - TransparentFX

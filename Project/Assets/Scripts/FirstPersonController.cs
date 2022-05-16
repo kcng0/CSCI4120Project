@@ -95,14 +95,19 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			if (Time.timeScale == 1)
+			{
+				
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			}
 		}
 
 		private void LateUpdate()
 		{
-			CameraRotation();
+			if (Time.timeScale == 1)
+				CameraRotation();
 		}
 
 		private void GroundedCheck()

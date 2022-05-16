@@ -50,7 +50,7 @@ public class enemyBoss : MonoBehaviour
 
         seePlayerCheck();
         inRangeCheck();
-        Debug.Log(state);
+        // Debug.Log(state);
 
         if (state == 0)
         {
