@@ -14,6 +14,9 @@ public class ListItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inventory.GetComponent<InventoryManager>().ListItems();
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventory.SetActive(!inventory.activeSelf);
+        }
     }
 }
