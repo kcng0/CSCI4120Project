@@ -8,11 +8,11 @@ public class Door : Interactable
     public float doorOpenAngle = 0f;
     public float doorCloseAngle = 90f;
     public float smooth = 2f;
-    private Item item;
+    public Item item;
     // Start is called before the first frame update
     void Start()
     {
-        Item item = GameObject.Find("PlayerCapsule").GetComponent<InteractItem>().EquipedItem;
+        
     }
     public void ChangeDoorState()
     {
@@ -27,15 +27,13 @@ public class Door : Interactable
 
     public override string GetDescription() {
         
-        if (open == false && item == null || item.itemType != Item.ItemType.key_1) {
-            return "Key is required to open the door!";
-        } else {
-            if (open == false && item != null && item.itemType == Item.ItemType.key_1) {
+        if (open == false && item != null && item.itemType == Item.ItemType.key_1) {
                 return "Press E to open the door!";
-            } else {
+            } else if (open == true && item != null && item.itemType == Item.ItemType.key_1) {
                 return "Press E to close the door!";
             }
-        }
+            else return "You need a key to open this door!";
+        
         }
 
     public override void Interact() {
@@ -44,6 +42,7 @@ public class Door : Interactable
     // Update is called once per frame
     void Update()
     {
+        item = GameObject.Find("PlayerCapsule").GetComponent<InteractItem>().EquipedItem;
         if(open)
         {
             Quaternion targetrotation1 = Quaternion.Euler(0, doorOpenAngle, 0);

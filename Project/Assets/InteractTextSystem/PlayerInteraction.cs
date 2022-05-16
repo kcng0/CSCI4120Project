@@ -24,7 +24,6 @@ public class PlayerInteraction : MonoBehaviour
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
             if (interactable != null) {
-                print("spot interactable");
                 HandleInteraction(interactable);
                 interactionText.text = interactable.GetDescription();
                 sucessfulHit = true;
@@ -40,7 +39,7 @@ public class PlayerInteraction : MonoBehaviour
         KeyCode key = KeyCode.E;
         switch (interactable.interactionType) {
             case Interactable.InteractionType.Door:
-                if (Input.GetKeyDown(key)) {
+                if (Input.GetKeyDown(key) && GameObject.Find("PlayerCapsule").GetComponent<InteractItem>().EquipedItem != null && GameObject.Find("PlayerCapsule").GetComponent<InteractItem>().EquipedItem.itemType == Item.ItemType.key_1) {
                     interactable.Interact();
                 }
                 break;
