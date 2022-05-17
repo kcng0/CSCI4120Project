@@ -6,7 +6,7 @@ public class enemyBoss : MonoBehaviour
 {
     public int lifePoint = 30;
     //public int lifeTime = 10;
-    private int state;
+    public int state;
     public float rotationDamping = 6.0f;
     public Rigidbody prefabFire;
     public float shootForce;
@@ -44,33 +44,28 @@ public class enemyBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         GameObject enemy;
 
         enemy = GameObject.FindGameObjectWithTag("Player");
 
         seePlayerCheck();
         inRangeCheck();
+        // Debug.Log(state);
 
         // check death
         if (lifePoint <= 0)
         {
             // play audio and effect may be?
             Destroy(gameObject);
-            return;
         }
-
-        // Debug.Log(state);
 
         if (state == 0)
         {
             state = 2;
             agent.destination = Waypoint1.position;
-
         }
 
-        if (hit3 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Basic Attack"))
+        if (hit3 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Basic Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.61f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.78f)
         {
             if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
             {
@@ -79,7 +74,7 @@ public class enemyBoss : MonoBehaviour
             }
             hit3 = false;
         }
-        if (hit4 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Claw Attack"))
+        if (hit4 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Claw Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.48f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.51f)
         {
             if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
             {
@@ -88,7 +83,7 @@ public class enemyBoss : MonoBehaviour
             }
             hit4 = false;
         }
-        if (hit5 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Horn Attack"))
+        if (hit5 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Horn Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.46f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.61f)
         {
             if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
             {
@@ -97,9 +92,9 @@ public class enemyBoss : MonoBehaviour
             }
             hit5 = false;
         }
-        if(hit6 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Scream"))
+        if(hit6 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Scream") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
         {
-            Rigidbody instanceFire = Instantiate(prefabFire, new Vector3(0,1,0) * 0.7f + shootPosition.position + shootPosition.forward * 1.0f,  shootPosition.rotation * Quaternion.Euler (-90f, 0f, 0f));
+            Rigidbody instanceFire = Instantiate(prefabFire, new Vector3(0,1,0) * 0.8f + shootPosition.position + shootPosition.forward * 1.0f,  shootPosition.rotation * Quaternion.Euler (-90f, 0f, 0f));
             instanceFire.GetComponent<Rigidbody>().AddForce(shootPosition.forward * shootForce);
             GetComponent<AudioSource>().Play();
             Destroy(instanceFire.gameObject, 2f);
@@ -110,7 +105,14 @@ public class enemyBoss : MonoBehaviour
         {
             state = 0;
             thisAnim.SetBool("SeePlayer", false);
-            agent.isStopped = false;
+            if (Vector3.Distance(Waypoint1.position,transform.position) <= 0.5)
+            {
+                agent.isStopped = true;
+            }
+            else
+            {
+                agent.isStopped = false;
+            }
         }
         else
         {
@@ -118,10 +120,7 @@ public class enemyBoss : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
             
         }
-
-        
     }
-    
 
     //check see the player or not
     private void seePlayerCheck()
@@ -162,7 +161,7 @@ public class enemyBoss : MonoBehaviour
         enemy = GameObject.FindGameObjectWithTag("Player");
         float dist = Vector3.Distance(enemy.transform.position, transform.position);
 
-        if(dist < 4.0f)
+        if(dist < 2.5f)
         {
             thisAnim.SetInteger("attack_random",Random.Range(0, 40));
             thisAnim.SetBool("inrange",true);
