@@ -8,10 +8,9 @@ public class HealthStatus : MonoBehaviour
 	// Start is called before the first frame update
 	public int maxHealth = 100;
 	public int currentHealth;
-
+	public int attack;
 	public HealthBar healthBar;
     public GameObject gotHitScreen;
-
 	private GameManager gameManager;
 	private CharacterController characterController;
 

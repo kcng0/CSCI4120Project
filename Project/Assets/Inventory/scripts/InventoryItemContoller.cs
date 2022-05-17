@@ -23,15 +23,17 @@ public class InventoryItemContoller : MonoBehaviour
         {
             case Item.ItemType.dagger:
                 Debug.Log("Use dagger");
-                if (interactItem.EquipedItem != item)
+                if (interactItem.EquipedItem != item) {
                     interactItem.EquipedItem = item;
+                    GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>().attack = 100;
+                }
                 else
                     interactItem.EquipedItem = null;
                 break;
             case Item.ItemType.potion:
                 Debug.Log("Use portion");
                 HealthStatus healthStatus = GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>();
-                healthStatus.currentHealth += 10;
+                healthStatus.currentHealth += 100;
                 if (healthStatus.currentHealth > healthStatus.maxHealth)
                 {
                     // GetComponent<AudioSource>().Play();
@@ -41,7 +43,7 @@ public class InventoryItemContoller : MonoBehaviour
                 RemoveItem();
                 break;
 
-            case Item.ItemType.book:
+            case Item.ItemType.magicBook:
                 Debug.Log("Use book");
                 if (interactItem.EquipedItem != item)
                     interactItem.EquipedItem = item;
@@ -99,8 +101,20 @@ public class InventoryItemContoller : MonoBehaviour
         
             case Item.ItemType.syringe:
                 Debug.Log("Use syringe");
-                if (interactItem.EquipedItem != item)
+                if (interactItem.EquipedItem != item) {
                     interactItem.EquipedItem = item;
+                    GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>().attack = 10;
+                }
+                else
+                    interactItem.EquipedItem = null;
+                break;
+
+            case Item.ItemType.knife:
+                Debug.Log("Use knife");
+                if (interactItem.EquipedItem != item) {
+                    interactItem.EquipedItem = item;
+                    GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>().attack = 50;
+                }
                 else
                     interactItem.EquipedItem = null;
                 break;

@@ -21,7 +21,7 @@ public class monsterLeave : MonoBehaviour
         }
         else
         {
-            if (played == false && !monster.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack"))
+            if (monster != null && played == false && !monster.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack"))
             { 
                 gameObject.GetComponent<ParticleSystem>().Play();
                 gameObject.GetComponent<AudioSource>().Play();

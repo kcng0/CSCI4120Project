@@ -15,6 +15,7 @@ TagManager:
   - Bomber
   - BossTrigger
   - BossDoor
+  - Drag
   layers:
   - Default
   - TransparentFX

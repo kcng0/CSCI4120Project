@@ -13,9 +13,10 @@ public class Item : ScriptableObject
     {
         dagger,
         potion,
-        book,
+        magicBook,
         key_1, key_2, key_3, key_4, key_5, key_6, key_7,
-        syringe
+        syringe,
+        knife
 
     }
 }
