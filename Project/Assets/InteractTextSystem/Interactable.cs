@@ -6,7 +6,8 @@ public abstract class Interactable : MonoBehaviour
 {
     public enum InteractionType {
         Door,
-        Item
+        Item,
+        Box
     }
 
     public InteractionType interactionType;

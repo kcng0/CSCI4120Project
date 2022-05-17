@@ -48,6 +48,11 @@ public class PlayerInteraction : MonoBehaviour
                     interactable.Interact();
                 }
                 break;
+            case Interactable.InteractionType.Box:
+                if (Input.GetKeyDown(key)) {
+                    interactable.Interact();
+                }
+                break;
             default:
                 throw new System.Exception("Unknown interaction type");
         }
