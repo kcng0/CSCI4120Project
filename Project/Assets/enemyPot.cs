@@ -46,6 +46,7 @@ public class enemyPot : MonoBehaviour
         {
             // play audio and effect may be?
             Destroy(gameObject);
+            state = 8;
             return;
         }
 

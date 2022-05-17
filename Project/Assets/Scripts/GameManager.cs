@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
             if (Physics.Raycast(Player.transform.position, Player.transform.forward, out RaycastHit hit, hitRange))
             {
 
-
+                GetComponent<AudioSource>().Play();
                 switch (hit.collider.tag)
                 {
                     case "Dragon":
@@ -39,18 +39,20 @@ public class GameManager : MonoBehaviour
                         // hit sound
                         break;
                     case "Golem":
-                        hit.collider.GetComponent<enemyGolem>().lifePoint -= 10;
+                        hit.collider.gameObject.transform.parent.GetComponent<enemyGolem>().lifePoint -= 10;
                         // hit sound
                         break;
                     case "Bomber":
-                        hit.collider.GetComponent<enemyBomb>().lifePoint -= 10;
+                        hit.collider.gameObject.transform.parent.GetComponent<enemyBomb>().lifePoint -= 10;
                         // hit sound
                         break;
                     case "FireElement":
                         hit.collider.GetComponent<enemyStone>().lifePoint -= 10;
+                        //Debug.Log(hit.collider.gameObject.transform.parent);
                         // hit sound
                         break;
                     default:
+                        Debug.Log(hit.collider.gameObject.transform.parent);
                         break;
                 }
             }

@@ -23,7 +23,7 @@ public class fireDisappear : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        if (other.gameObject.tag != "StoneMonster" && other.gameObject.tag != "Dragon")
+        if (other.gameObject.tag != "FireElement" && other.gameObject.tag != "Dragon")
         {
             Destroy(gameObject, 0.05f);
         }

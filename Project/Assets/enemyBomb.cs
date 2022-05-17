@@ -68,7 +68,7 @@ public class enemyBomb : MonoBehaviour
             //fuse.Stop();
             if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.0 && lifePoint > 0)
             {
-                lifePoint = 0;
+                lifePoint = -9999;
                 Debug.Log("Explosion Hit!");
                 healthStatus.TakeDamage(damageValue);
             }
@@ -80,6 +80,8 @@ public class enemyBomb : MonoBehaviour
         if (lifePoint <= 0)
         {
             // play audio and effect may be?
+            state = 8;
+            //gameObject.active = false;
             Destroy(gameObject);
         }
 
