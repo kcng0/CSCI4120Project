@@ -9,6 +9,7 @@ public class Door : Interactable
     public float doorCloseAngle = 90f;
     public float smooth = 2f;
     public Item item;
+    public Item.ItemType ItemType;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +28,9 @@ public class Door : Interactable
 
     public override string GetDescription() {
         
-        if (open == false && item != null && item.itemType == Item.ItemType.key_1) {
+        if (open == false && item != null && item.itemType == ItemType) {
                 return "Press E to open the door!";
-            } else if (open == true && item != null && item.itemType == Item.ItemType.key_1) {
+            } else if (open == true && item != null && item.itemType == ItemType) {
                 return "Press E to close the door!";
             }
             else return "You need a key to open this door!";
