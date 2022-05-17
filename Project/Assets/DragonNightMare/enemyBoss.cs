@@ -44,12 +44,23 @@ public class enemyBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         GameObject enemy;
 
         enemy = GameObject.FindGameObjectWithTag("Player");
 
         seePlayerCheck();
         inRangeCheck();
+
+        // check death
+        if (lifePoint <= 0)
+        {
+            // play audio and effect may be?
+            Destroy(gameObject);
+            return;
+        }
+
         // Debug.Log(state);
 
         if (state == 0)
@@ -107,7 +118,10 @@ public class enemyBoss : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
             
         }
+
+        
     }
+    
 
     //check see the player or not
     private void seePlayerCheck()

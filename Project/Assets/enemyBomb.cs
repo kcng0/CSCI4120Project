@@ -76,6 +76,13 @@ public class enemyBomb : MonoBehaviour
 
         seePlayerCheck();
 
+        // check death
+        if (lifePoint <= 0)
+        {
+            // play audio and effect may be?
+            Destroy(gameObject);
+        }
+
         if (state == 0)
         {
             tempPositon = agent.destination;

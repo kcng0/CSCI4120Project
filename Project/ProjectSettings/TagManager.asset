@@ -8,6 +8,11 @@ TagManager:
   - CinemachineTarget
   - StoneMonster
   - item
+  - Dragon
+  - Statue
+  - Golem
+  - FireElement
+  - Bomber
   layers:
   - Default
   - TransparentFX
