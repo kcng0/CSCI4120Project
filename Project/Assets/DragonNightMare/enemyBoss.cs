@@ -57,6 +57,7 @@ public class enemyBoss : MonoBehaviour
         {
             // play audio and effect may be?
             Destroy(gameObject);
+            return;
         }
 
         if (state == 0)

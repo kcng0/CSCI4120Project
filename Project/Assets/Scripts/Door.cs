@@ -38,7 +38,9 @@ public class Door : Interactable
         }
 
     public override void Interact() {
-        ChangeDoorState();
+        if (item != null && item == key) {
+            ChangeDoorState();
+        }
     }
     // Update is called once per frame
     void Update()

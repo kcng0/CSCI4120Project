@@ -13,6 +13,8 @@ TagManager:
   - Golem
   - FireElement
   - Bomber
+  - BossTrigger
+  - BossDoor
   layers:
   - Default
   - TransparentFX

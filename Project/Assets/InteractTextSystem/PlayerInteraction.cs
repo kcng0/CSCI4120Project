@@ -39,7 +39,7 @@ public class PlayerInteraction : MonoBehaviour
         KeyCode key = KeyCode.E;
         switch (interactable.interactionType) {
             case Interactable.InteractionType.Door:
-                if (Input.GetKeyDown(key) && GameObject.Find("PlayerCapsule").GetComponent<InteractItem>().EquipedItem != null && GameObject.Find("PlayerCapsule").GetComponent<InteractItem>().EquipedItem.itemType == Item.ItemType.key_1) {
+                if (Input.GetKeyDown(key)) {
                     interactable.Interact();
                 }
                 break;
@@ -57,4 +57,18 @@ public class PlayerInteraction : MonoBehaviour
                 throw new System.Exception("Unknown interaction type");
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+        {   
+            if (other.tag == "BossTrigger") {
+                if (GameObject.FindWithTag("Dragon") != null) {
+                    GameObject.FindWithTag("BossDoor").GetComponent<BossDoor>().locked = true;
+                    GameObject.FindWithTag("BossDoor").GetComponent<BossDoor>().open = false;
+                }
+                else 
+                {
+                    GameObject.FindWithTag("BossDoor").GetComponent<BossDoor>().locked = false;
+                }
+            }
+        }
 }
