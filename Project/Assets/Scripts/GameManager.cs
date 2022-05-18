@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isGameActive = true;
     public Button restartButton;
     public float hitRange;
+    public GameObject gameOverImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,11 +71,16 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
+        gameOverImage.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // The restart button is endowed the RestartGame function in the inspector
     public void RestartGame()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
