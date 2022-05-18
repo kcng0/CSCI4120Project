@@ -48,7 +48,11 @@ public class enemyBoss : MonoBehaviour
 
         enemy = GameObject.FindGameObjectWithTag("Player");
 
-        seePlayerCheck();
+        if (!seePlayer)
+        {
+            seePlayerCheck();
+        }
+        
         inRangeCheck();
         // Debug.Log(state);
 
@@ -66,40 +70,48 @@ public class enemyBoss : MonoBehaviour
             agent.destination = Waypoint1.position;
         }
 
-        if (hit3 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Basic Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.61f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.78f)
+        //if (hit3 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Basic Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.61f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.78f)
+        if (hit3 == false && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Basic Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.61f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.78f)
         {
-            if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
+            if (Vector3.Distance(enemy.transform.position,transform.position) <= 3.0)
             {
                 healthStatus.TakeDamage(damageValue3);
-                hit3 = false;
+                //hit3 = false;
             }
-            hit3 = false;
+            //hit3 = false;
+            hit3 = true;
         }
-        if (hit4 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Claw Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.48f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.51f)
+        //if (hit4 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Claw Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.48f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.51f)
+        if (hit4 == false && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Claw Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.48f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.51f)
         {
-            if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
+            if (Vector3.Distance(enemy.transform.position,transform.position) <= 3.0)
             {
                 healthStatus.TakeDamage(damageValue4);
-                hit4 = false;
+                //hit4 = false;
             }
-            hit4 = false;
+            //hit4 = false;
+            hit4 = true;
         }
-        if (hit5 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Horn Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.46f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.61f)
+        //if (hit5 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Horn Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.46f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.61f)
+        if (hit5 == false && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Horn Attack") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.46f  && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.61f)
         {
-            if (Vector3.Distance(enemy.transform.position,transform.position) <= 2.5)
+            if (Vector3.Distance(enemy.transform.position,transform.position) <= 3.0)
             {
                 healthStatus.TakeDamage(damageValue5);
-                hit5 = false;
+                //hit5 = false;
             }
-            hit5 = false;
+            //hit5 = false;
+            hit5 = true;
         }
-        if(hit6 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Scream") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+        //if(hit6 == true && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Scream") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+        if(hit6 == false && thisAnim.GetCurrentAnimatorStateInfo(0).IsName("Scream") && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f && thisAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.51f)
         {
-            Rigidbody instanceFire = Instantiate(prefabFire, new Vector3(0,1,0) * 0.8f + shootPosition.position + shootPosition.forward * 1.0f,  shootPosition.rotation * Quaternion.Euler (-90f, 0f, 0f));
+            hit6 = true;
+            Rigidbody instanceFire = Instantiate(prefabFire, new Vector3(0,1,0) * 1.0f + shootPosition.position + shootPosition.forward * 1.0f,  shootPosition.rotation * Quaternion.Euler (-90f, 0f, 0f));
             instanceFire.GetComponent<Rigidbody>().AddForce(shootPosition.forward * shootForce);
             GetComponent<AudioSource>().Play();
             Destroy(instanceFire.gameObject, 2f);
-            hit6 = false;
+            //hit6 = false;
         }
         
         if (!seePlayer)
@@ -117,9 +129,12 @@ public class enemyBoss : MonoBehaviour
         }
         else
         {
+            thisAnim.SetBool("SeePlayer", true);
             Quaternion rotation = Quaternion.LookRotation(enemy.transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
-            
+            Vector3 dirToEnemy = transform.position - enemy.transform.position;
+            Vector3 newPos = transform.position - dirToEnemy;
+            agent.SetDestination(newPos);
         }
     }
 
@@ -164,7 +179,7 @@ public class enemyBoss : MonoBehaviour
 
         if(dist < 2.5f)
         {
-            thisAnim.SetInteger("attack_random",Random.Range(0, 40));
+            //thisAnim.SetInteger("attack_random",Random.Range(0, 40));
             thisAnim.SetBool("inrange",true);
             agent.isStopped = true;
             inrange = true;
@@ -186,12 +201,16 @@ public class enemyBoss : MonoBehaviour
         {
             if (state == 2)
             {
-                yield return new WaitForSeconds(0.5f);
+                hit3 = false;
+                hit4 = false;
+                hit5 = false;
+                hit6 = false;
+                yield return new WaitForSeconds(0.1f);
                 agent.isStopped = false;
                 if (seePlayer)
                 {
-                    agent.destination = Waypoint3.position;
-                    thisAnim.SetBool("SeePlayer", true);
+                    //agent.destination = Waypoint3.position;
+                    //thisAnim.SetBool("SeePlayer", true);
                     if(inrange)
                     {
                         state = 3;
@@ -201,8 +220,10 @@ public class enemyBoss : MonoBehaviour
             }
             else if(state == 3)
             {
-                hit3 = true;
+                //hit3 = true;
                 yield return new WaitForSeconds(1.2f);
+                //thisAnim.SetInteger("attack_random",Random.Range(0, 40));
+                thisAnim.SetInteger("attack_random",32);
                 int tmp = thisAnim.GetInteger("attack_random");
                 if(tmp <= 10)
                 {
@@ -219,20 +240,20 @@ public class enemyBoss : MonoBehaviour
             }
             else if(state == 4)
             {
-                hit4 = true;
+                //hit4 = true;
                 yield return new WaitForSeconds(3.4f);
                 state = 2;
             }
             else if(state == 5)
             {
-                hit5 = true;
+                //hit5 = true;
                 yield return new WaitForSeconds(2.2f);
                 state = 2;
             }
             else if(state == 6)
             {
-                hit6 = true;
-                yield return new WaitForSeconds(2.8f);
+                //hit6 = true;
+                yield return new WaitForSeconds(3.0f);
                 state = 2;
             }
             else

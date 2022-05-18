@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public float hitRange;
     public GameObject gameOverImage;
+    public GameObject gameClearText;
     public AudioSource[] weaponHitSound;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
                 int attack = GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>().attack;
                 
                 //GetComponent<AudioSource>().Play();
-                if (weaponHitSound.Length == 3)
+                if (weaponHitSound.Length == 4)
                 {
                     if (EquipedItem.itemType == Item.ItemType.syringe)
                       weaponHitSound[0].Play();
@@ -87,6 +88,17 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         gameOverImage.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void GameClear()
+    {
+        isGameActive = false;
+        gameClearText.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        weaponHitSound[3].Play();
+        //gameOverImage.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
     }

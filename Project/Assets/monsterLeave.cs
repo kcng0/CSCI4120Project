@@ -7,10 +7,14 @@ public class monsterLeave : MonoBehaviour
     public GameObject monster;
     private bool played = false;
     private bool selfExplode = false;
+    private bool isBoss = false;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        if (monster.tag == "Dragon")
+          isBoss = true;
     }
 
     // Update is called once per frame
@@ -36,6 +40,10 @@ public class monsterLeave : MonoBehaviour
                 }
                 played = true;
                 Destroy(gameObject, 1.0f);
+                if (isBoss)
+                {
+                    gameManager.GameClear();
+                }
             }
         }
         
