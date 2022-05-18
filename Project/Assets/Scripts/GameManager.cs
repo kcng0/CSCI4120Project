@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI gameOverText;
     public bool isGameActive = true;
+    public Button menuButton;
+    public Button exitButton;
     public Button restartButton;
     public float hitRange;
     public GameObject gameOverImage;
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         weaponHitSound = GetComponents<AudioSource>();
+        GameObject.Find("MusicPlayer").GetComponent<MusicManger>().ChangeMusic("base");
         
     }
 
@@ -96,18 +99,32 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         gameClearText.SetActive(true);
-        restartButton.gameObject.SetActive(true);
+        menuButton.gameObject.SetActive(true);
+        exitButton.gameObject.SetActive(true);
         weaponHitSound[3].Play();
+
         //gameOverImage.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
+        GameObject.Find("MusicPlayer").GetComponent<MusicManger>().ChangeMusic("end");
     }
 
     // The restart button is endowed the RestartGame function in the inspector
-    public void RestartGame()
+    public void MainMenu()
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

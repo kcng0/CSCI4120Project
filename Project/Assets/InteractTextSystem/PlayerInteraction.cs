@@ -64,6 +64,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (GameObject.FindWithTag("Dragon") != null) {
                     GameObject.FindWithTag("BossDoor").GetComponent<BossDoor>().locked = true;
                     GameObject.FindWithTag("BossDoor").GetComponent<BossDoor>().open = false;
+                    GameObject.Find("MusicPlayer").GetComponent<MusicManger>().ChangeMusic("boss");
                 }
                 else 
                 {
