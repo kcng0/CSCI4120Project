@@ -157,7 +157,7 @@ public class enemyBoss : MonoBehaviour
     {
 
         GameObject enemy;
-        Vector3 heading;
+        //Vector3 heading;
 
         enemy = GameObject.FindGameObjectWithTag("Player");
         float dist = Vector3.Distance(enemy.transform.position, transform.position);

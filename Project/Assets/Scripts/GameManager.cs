@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public float hitRange;
     public GameObject gameOverImage;
+    public AudioSource[] weaponHitSound;
     // Start is called before the first frame update
     void Start()
     {
+        weaponHitSound = GetComponents<AudioSource>();
         
     }
 
@@ -27,14 +29,27 @@ public class GameManager : MonoBehaviour
                 GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>().attack = 0;
             }
 
-        if (Input.GetMouseButtonDown(0) && EquipedItem != null && (EquipedItem.itemType == Item.ItemType.dagger || EquipedItem.itemType == Item.ItemType.syringe || EquipedItem.itemType == Item.ItemType.knife))
+
+        if (Input.GetMouseButtonDown(0) && EquipedItem != null && (EquipedItem.itemType == Item.ItemType.dagger || EquipedItem.itemType == Item.ItemType.syringe || EquipedItem.itemType == Item.ItemType.knife) && Time.timeScale != 0)
         {
 
             GameObject Player = GameObject.FindGameObjectWithTag("Player");
             if (Physics.Raycast(Player.transform.position, Player.transform.forward, out RaycastHit hit, hitRange))
             {
                 int attack = GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>().attack;
-                GetComponent<AudioSource>().Play();
+                
+                //GetComponent<AudioSource>().Play();
+                if (weaponHitSound.Length == 3)
+                {
+                    if (EquipedItem.itemType == Item.ItemType.syringe)
+                      weaponHitSound[0].Play();
+                    if (EquipedItem.itemType == Item.ItemType.knife)
+                      weaponHitSound[1].Play();
+                    if (EquipedItem.itemType == Item.ItemType.dagger)
+                      weaponHitSound[2].Play();
+                }
+
+
                 switch (hit.collider.tag)
                 {
                     case "Dragon":
