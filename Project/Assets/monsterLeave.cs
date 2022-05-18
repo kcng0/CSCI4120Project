@@ -6,6 +6,7 @@ public class monsterLeave : MonoBehaviour
 {
     public GameObject monster;
     private bool played = false;
+    private bool selfExplode = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,21 @@ public class monsterLeave : MonoBehaviour
         if (monster != null)
         {
             gameObject.transform.position = monster.transform.position;
+            if (monster.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack"))
+            {
+                selfExplode = true;
+            }
+
         }
         else
         {
-            if (monster != null && played == false && !monster.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("attack"))
+            if (played == false)
             { 
-                gameObject.GetComponent<ParticleSystem>().Play();
-                gameObject.GetComponent<AudioSource>().Play();
+                if (!selfExplode)
+                {
+                  gameObject.GetComponent<ParticleSystem>().Play();
+                  gameObject.GetComponent<AudioSource>().Play();
+                }
                 played = true;
                 Destroy(gameObject, 1.0f);
             }
