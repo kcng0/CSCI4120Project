@@ -5,6 +5,7 @@ using UnityEngine;
 public class Trigger : MonoBehaviour
 {
     public bool steppedOn = false;
+    private int collideNum = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +18,19 @@ public class Trigger : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        steppedOn = true;
+        collideNum += 1;
+        if (collideNum > 0)
+            steppedOn = true;
+
     }
 
-    private void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
-        steppedOn = false;
+        collideNum--;
+        if (collideNum == 0)
+            steppedOn = false;
+        
     }
 }

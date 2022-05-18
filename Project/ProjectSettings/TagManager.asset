@@ -16,6 +16,7 @@ TagManager:
   - BossTrigger
   - BossDoor
   - Drag
+  - platform
   layers:
   - Default
   - TransparentFX
