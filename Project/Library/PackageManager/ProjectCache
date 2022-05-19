@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637884827030000000
-    m_Hash: 1889570947
+      ticks: 637885011895064801
+    m_Hash: 754154334
   m_LockFileStatus:
     m_FilePath: K:/Unity/githubproject/CSCI4120Project/Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637884827030000000
-    m_Hash: 2606538103
+      ticks: 637885012758166818
+    m_Hash: 193309503
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -2834,6 +2834,54 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.0
+    nextVersion: 
+- packageId: com.sitterheim.unityresolutiondialog@https://github.com/sitterheim/UnityResolutionDialog.git#release/stable
+  testable: 0
+  isDirectDependency: 1
+  version: 1.1.0
+  source: 5
+  resolvedPath: K:\Unity\githubproject\CSCI4120Project\Project\Library\PackageCache\com.sitterheim.unityresolutiondialog@33bbea72dd
+  assetPath: Packages/com.sitterheim.unityresolutiondialog
+  name: com.sitterheim.unityresolutiondialog
+  displayName: Unity Resolution Dialog
+  author:
+    name: Steffen Itterheim
+    email: 
+    url: https://github.com/sitterheim
+  category: 
+  type: 
+  description: 'Replacement for Unity''s built-in resolution dialog (aka Screen Selector)
+    that was removed in Unity 2019.3. Works both up front (simply make it the first
+    scene) and as a popup dialog (default key: ESC). Intended for development / testing
+    purposes but can also be used in production.'
+  status: 4
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    verified: 
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
     nextVersion: 
 - packageId: com.unity.modules.subsystems@1.0.0
   testable: 0

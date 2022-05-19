@@ -12,6 +12,7 @@ public class MusicManger : MonoBehaviour
         foreach (Music m in musics)
         {
             m.source = gameObject.AddComponent<AudioSource>();
+            m.source.loop = true;
             m.source.clip = m.clip;
         }
     }
