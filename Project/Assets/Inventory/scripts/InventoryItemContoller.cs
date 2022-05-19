@@ -33,7 +33,7 @@ public class InventoryItemContoller : MonoBehaviour
             case Item.ItemType.potion:
                 Debug.Log("Use portion");
                 HealthStatus healthStatus = GameObject.Find("PlayerCapsule").GetComponent<HealthStatus>();
-                healthStatus.currentHealth += 100;
+                healthStatus.currentHealth += healthStatus.currentHealth / 2;
                 if (healthStatus.currentHealth > healthStatus.maxHealth)
                 {
                     // GetComponent<AudioSource>().Play();
