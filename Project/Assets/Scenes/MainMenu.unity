@@ -2471,7 +2471,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "In Utopic Centry, Tearluna Empire and Stellarflare Kingdom were at war
-    over 100 years. \nIn U.C. 0136, Astra Stellarflare III,the King of Stellarflarer,
+    over 100 years. \nIn U.C. 0136, Astra Stellarflare III,the King of Stellarflare,
     \nopened the Gate of Hell for the power of demons to win the war. \nHowever,
     the lord of demon, Morax, turned the people in Stellarflare Kingdom to demons
     \nand Stellarflare became the demon kingdom, Nuseniv. \r\n\rThe demons invade
@@ -2479,8 +2479,9 @@ MonoBehaviour:
     were enslaved by the demons and fell into despair. \n\nAt this time, Nobu, a
     young man from the Tearluna Empire, \nwas chosen to be the hero of Tearluna and
     fighted with demons.\nUnfortunately, he walked into the trap of demons during
-    a fight.\nHe lost all his items and was locked in a dungeon.\nNow, he should
-    find the way to leave the dungeon and continue the jounery of saving the world..."
+    a fight.\nHe lost almost all his items and was locked in a dungeon.\nNow, he
+    should find the way to leave the dungeon and continue the jounery of saving the
+    world..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b7bf2e54738e20448d3bb99afa0b2b6, type: 2}
   m_sharedMaterial: {fileID: -1370225581536280284, guid: 8b7bf2e54738e20448d3bb99afa0b2b6, type: 2}
