@@ -47,10 +47,10 @@ public class GameManager : MonoBehaviour
                 {
                     if (EquipedItem.itemType == Item.ItemType.syringe)
                       weaponHitSound[0].Play();
-                    if (EquipedItem.itemType == Item.ItemType.knife)
-                      weaponHitSound[1].Play();
-                    if (EquipedItem.itemType == Item.ItemType.dagger)
+                    else if (EquipedItem.itemType == Item.ItemType.dagger)
                       weaponHitSound[2].Play();
+                    else
+                      weaponHitSound[1].Play();
                 }
 
 

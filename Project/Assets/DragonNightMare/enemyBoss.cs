@@ -50,7 +50,8 @@ public class enemyBoss : MonoBehaviour
 
         if (!seePlayer)
         {
-            seePlayerCheck();
+            if(Vector3.Distance(enemy.transform.position, transform.position) < 5.0f)
+            seePlayer = true;
         }
         
         inRangeCheck();
