@@ -1,4 +1,4 @@
-# CSCI4120Project
+# CSCI4120Project Principle of Computer Game Software
 Nobu
 
 Action, adventure and puzzle game
